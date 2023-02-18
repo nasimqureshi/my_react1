@@ -1,22 +1,18 @@
- 
+// @flow 
 import  { useState } from 'react';
+import BlogList from './BlogList';
 
 
  const Home = () => {
-    // let name = "Nasim";
-    const [name, setName] = useState('Nasim');
-    const [age, setAge] = useState('69');
+    const [blogs, setBlogs] = useState([
+        { title: 'My new websit', body: 'lorem ipsum...', author: 'Nasim', id: 1},
+        { title: 'Welcome part', body: 'lorem ipsum...', author: 'Qamar', id: 2},
+        { title: 'Wev dev top tips', body: 'lorem ipsum...', author: 'Samreen', id: 1},
+    ]);
 
-    const handleClick = () => {
-        setName('Qamar');
-        setAge('58');
-    }
-    
     return (
         <div className='home'>
-            <h1>Home Page</h1>
-            <p>{ name } is {age} years old</p>
-            <button onClick={handleClick}>Click Me</button>
+          <BlogList blogs={blogs}/>   
         </div>
     );
 };
